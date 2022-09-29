@@ -16,6 +16,10 @@ export class App extends Component {
   }
 
   addContact = (contact) => {
+    if (this.isDuplicate(contact)) {
+      return alert(`${contact.name} is already in contacts`);
+    }
+      
     this.setState((prev) => {
       const newContact = {
         id: nanoid(),
@@ -25,6 +29,12 @@ export class App extends Component {
         contacts: [...prev.contacts, newContact]
       }
     })
+  }
+
+  isDuplicate = ({ name }) => {
+    const { contacts } = this.state;
+    const result = contacts.find((item) => item.name === name);
+    return result;
   }
 
   removeContact = (id) => {
