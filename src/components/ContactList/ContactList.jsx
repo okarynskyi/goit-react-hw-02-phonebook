@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import css from './ContactList.module.css';
 
 export const ContactList = ({ contacts, removeContact }) => {
     const elements = contacts.map(({ name, number, id }) => {
-        return <li key={id}>{name}: {number}
-            <button onClick={() => {removeContact(id)}}>Delete</button>
+        return <li key={id} className={css.list}>{name}: {number}
+            <button onClick={() => {removeContact(id)}} className={css.list_button}>Delete</button>
         </li>
     })
     return (
