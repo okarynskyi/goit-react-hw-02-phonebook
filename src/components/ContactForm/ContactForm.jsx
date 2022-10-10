@@ -27,7 +27,15 @@ export class ContactForm extends Component {
             name: '',
             number: ''
         })
-    }
+  }
+  
+  componentDidMount() {
+    console.log('mount')
+  }
+
+  componentDidUpdate() {
+    console.log('upd')
+  }
 
     render() {
         const { nameId, numberId, handleChange, handleSubmit } = this;
