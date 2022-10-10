@@ -30,7 +30,7 @@ export class ContactForm extends Component {
   }
   
   componentDidMount() {
-    console.log('mount')
+    console.log('mount');
   }
 
   componentDidUpdate() {
